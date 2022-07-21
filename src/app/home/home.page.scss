@@ -1,4 +1,4 @@
-#container {
+ion-content {
   text-align: center;
 
   position: absolute;
@@ -6,22 +6,26 @@
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+  --background: rgba(255, 255, 255, 0.788);
+
+}
+ion-card {
+ 
+  --background: rgba(255, 255, 255, 0.788);
+
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-grid {
+  background: rgb(248, 248, 248);
+ color:black;
+  width: 100%;
+  height: 100%;
+  padding-top: 2em ;
 }
+ion-item {
+  --background: rgba(255, 255, 255, 0.788);
+  border: 1px solid rgb(0, 0, 0);
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
-}
-
-#container a {
-  text-decoration: none;
+ 
+  color: black;
 }

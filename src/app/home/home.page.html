@@ -1,20 +1,82 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+
+<ion-content>
+  <ion-card >
+    <ion-item>
+      {{!actividad.id ?'Agregar' : 'Editar'}}  actividad
+    </ion-item>
+    
+    <ion-card-content>
+      <ion-grid>
+        <ion-row>
+          <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
+            <ion-item>
+              <ion-label position="floating">NOMBRE</ion-label>
+              <ion-input [(ngModel)]="actividad.nombre"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
+            <ion-item>
+              <ion-label position="floating">FECHA</ion-label>
+              <ion-input type ="date" [(ngModel)]="actividad.fecha"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
+            <ion-item>
+                
+                  <ion-label position="floating">ASUNTO</ion-label>
+                  
+                                  <ion-input  [(ngModel)]="actividad.asunto"></ion-input>
+
+                
+            </ion-item>
+          </ion-col>
+          <ion-col >
+            <ion-button expand="block" (click)="onSubmit()">GUARDAR</ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card >
+    <ion-item>
+      <ion-grid>
+        <ion-row class="divide">
+          <ion-col size="3">
+            NOMBRE
+          </ion-col>
+          <ion-col size="3">
+            FECHA
+          </ion-col>
+          <ion-col size="3">
+            ASUNTO
+          </ion-col>
+          <ion-col size="2">
+            ACCION
+          </ion-col>
+        </ion-row>
+        <ion-row *ngFor="let u of actividadItem;let i = index;">
+          <ion-col size="3">
+            {{u.nombre}}
+          </ion-col>
+          <ion-col size="3">
+            {{u.fecha}}
+          </ion-col>
+          <ion-col size="3">
+            {{u.asunto}}
+          </ion-col>
+          <ion-col size="3">
+            <ion-button color="warning" (click)="edit(i)">
+              <ion-icon name="create-outline"></ion-icon>EDITAR
+            </ion-button>
+            <ion-button color="danger" (click)="remove(i)">
+              <ion-icon name="trash-outline"></ion-icon>ELIMINAR
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+  
 </ion-content>

@@ -6,7 +6,43 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  actividadItem: any[] = [];
+  actividad: actividad = new actividad();
+  isDisplay: boolean = true;
+  actividadId: number;
+  constructor() {
+    
+  }
+   
+  format(){
+    this.actividad = new actividad();
+  }
+  
+ 
+  onSubmit() {
+    if(this.actividadId) {
+      this.actividadItem[this.actividadId] = JSON.parse(JSON.stringify(this.actividad));
+      this.format();
+    }
+    else {
+      this.actividadItem.push(JSON.parse(JSON.stringify(this.actividad)));
+      this.format();
+    }
+  }
+  remove(id) {
+    this.actividadItem.splice(id, 1);
+  }
+  edit(id) {
+    this.actividad = this.actividadItem[id];
+    this.actividadId = id
+    
+  }
 
-  constructor() {}
+}
 
+export class actividad {
+  nombre: string;
+  fecha!: string;
+  asunto!: string;
+  id!: string;
 }
