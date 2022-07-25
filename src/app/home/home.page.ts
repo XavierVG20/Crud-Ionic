@@ -42,7 +42,9 @@ export class HomePage {
 
 export class actividad {
   nombre: string;
+  apellido: string;
   fecha!: string;
+  edad: string;
   asunto!: string;
   id!: string;
 }

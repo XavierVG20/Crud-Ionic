@@ -18,14 +18,26 @@
           </ion-col>
           <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
             <ion-item>
+              <ion-label position="floating">APALLIDO</ion-label>
+              <ion-input [(ngModel)]="actividad.apellido"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
+            <ion-item>
               <ion-label position="floating">FECHA</ion-label>
               <ion-input type ="date" [(ngModel)]="actividad.fecha"></ion-input>
             </ion-item>
           </ion-col>
           <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
             <ion-item>
+              <ion-label position="floating">EDAD</ion-label>
+              <ion-input type ="text" [(ngModel)]="actividad.edad"></ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size-md="12" size-sm="12" size-lg="3" size-xs="12">
+            <ion-item>
                 
-                  <ion-label position="floating">ASUNTO</ion-label>
+                  <ion-label position="floating">PASATIEMPO</ion-label>
                   
                                   <ion-input  [(ngModel)]="actividad.asunto"></ion-input>
 
@@ -50,7 +62,10 @@
             FECHA
           </ion-col>
           <ion-col size="3">
-            ASUNTO
+            EDAD
+          </ion-col>
+          <ion-col size="3">
+            PASARIEMPO
           </ion-col>
           <ion-col size="2">
             ACCION
@@ -62,6 +77,9 @@
           </ion-col>
           <ion-col size="3">
             {{u.fecha}}
+          </ion-col>
+          <ion-col size="3">
+            {{u.edad}}
           </ion-col>
           <ion-col size="3">
             {{u.asunto}}
